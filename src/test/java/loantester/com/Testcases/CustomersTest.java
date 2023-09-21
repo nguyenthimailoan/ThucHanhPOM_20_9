@@ -1,12 +1,11 @@
 package loantester.com.Testcases;
 
 import loantester.com.Common.BaseTest;
-import loantester.com.Pages.Customers.AddCustomerPage;
-import loantester.com.Pages.Customers.CustomerDetailPage;
-import loantester.com.Pages.Customers.CustomersPage;
+import loantester.com.Pages.Customers.*;
 import loantester.com.Pages.DashboardPage;
 import loantester.com.Pages.LoginPage;
 import org.testng.annotations.Test;
+import org.openqa.selenium.interactions.Actions;
 
 public class CustomersTest extends BaseTest {
     LoginPage loginPage;
@@ -14,6 +13,8 @@ public class CustomersTest extends BaseTest {
     CustomersPage customersPage;
     AddCustomerPage addCustomerPage;
     CustomerDetailPage customerDetailPage;
+    EditCustomerPage editCustomerPage;
+    DeleteCustomerPage deleteCustomerPage;
 
     @Test
     public void testAddNewCustomer(){
@@ -43,6 +44,26 @@ public class CustomersTest extends BaseTest {
         customerDetailPage = customersPage.clickOnFirstRowCustomerName();
         //check customer detail
         customerDetailPage.checkCustomerDetail("Holiday06");
+        // edit lai cac truong
+        EditCustomerPage editCustomerPage = new EditCustomerPage(driver);
+        editCustomerPage.verifyheader();
+        editCustomerPage.EditCustomer();
+        editCustomerPage.InputCustomer();
+        editCustomerPage.OpenmennuCustomer();
+
+        // Xóa các bản ghi đã add
+
+        customersPage.searchCustomer("Holiday07");
+        //Click vào giá trị Cusstomer Name dòng đầu tiên
+        customerDetailPage = customersPage.clickOnFirstRowCustomerName();
+//        DeleteCustomerPage deleteCustomerPage = new DeleteCustomerPage(driver);
+//        deleteCustomerPage.DeletePage();
+
+
+// create an object of the Actions class
+         Actions action = new Actions(driver);
+        action.moveToElement(deletepage).build().perform();
+
 
 
     }

@@ -1,6 +1,7 @@
 package loantester.com.Pages;
 
 import loantester.com.Pages.Customers.CustomersPage;
+import loantester.com.Pages.Project.ProjectPage;
 import loantester.com.keywords.WebUI;
 import static loantester.com.keywords.WebUI.*;
 import org.openqa.selenium.By;
@@ -15,6 +16,7 @@ public class DashboardPage {
 
     // Các Object
     By menuCustomer = By.xpath("//span[normalize-space()='Customers']");
+    By menuProjects = By.xpath("//span[normalize-space()='Projects']");
     By buttonOptionDashboard = By.xpath("//div[@class='screen-options-btn']");
 
     By checkboxQuickStatistics = By.xpath("//label[normalize-space()='Quick Statistics']");
@@ -45,6 +47,11 @@ public class DashboardPage {
     //   driver.findElement(menuCustomer).click();
         clickElement(menuCustomer);
        return new CustomersPage(driver);
+    }
+    public ProjectPage openProject(){
+        waitForPageLoaded();
+        clickElement(menuProjects);
+        return new ProjectPage(driver);
     }
 
     public void ClickcheckboxQuickStatistics(){
