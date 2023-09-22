@@ -21,6 +21,7 @@ public class ProjectTest extends BaseTest {
        // Kiểm tra trang Project load đúng hay chưa
        projectPage.verifyProjetcPage();
        addProjectPage = projectPage.clickNewProjectButton();
+       addProjectPage.AddProject("Holiday06");
 
     }
 

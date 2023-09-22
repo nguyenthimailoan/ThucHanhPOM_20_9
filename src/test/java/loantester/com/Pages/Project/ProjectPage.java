@@ -35,7 +35,7 @@ public class ProjectPage {
     public AddProjectPage clickNewProjectButton(){
         waitForElementVisible(buttonAddProjetc,10);
         clickElement(buttonAddProjetc);
-        return new AddProjectPage();
+        return new AddProjectPage(driver);
     }
     public void SearchProject(String Projectname){
         waitForPageLoaded();

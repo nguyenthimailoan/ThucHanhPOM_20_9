@@ -58,11 +58,11 @@ public class CustomersTest extends BaseTest {
         customerDetailPage = customersPage.clickOnFirstRowCustomerName();
 //        DeleteCustomerPage deleteCustomerPage = new DeleteCustomerPage(driver);
 //        deleteCustomerPage.DeletePage();
-
-
-// create an object of the Actions class
-         Actions action = new Actions(driver);
-        action.moveToElement(deletepage).build().perform();
+//
+//
+//// create an object of the Actions class
+//         Actions action = new Actions(driver);
+//        action.moveToElement(deleteCustomerPage.getDeletePageElement()).build().perform();
 
 
 
