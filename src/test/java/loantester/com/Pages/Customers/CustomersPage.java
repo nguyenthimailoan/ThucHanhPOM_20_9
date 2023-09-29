@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+
 public class CustomersPage {
     // Các thuộc tính xác thực Customer Page
     private String PAGE_URL = "https://crm.anhtester.com/admin/clients";
@@ -22,7 +23,7 @@ public class CustomersPage {
     private By buttonContacts = By.xpath("//div[@class='_buttons']//a[normalize-space()='Contacts']");
     private By inputSearch = By.xpath("//div[@id='DataTables_Table_0_filter']//input");
     private By tdCustomerName = By.xpath("//tbody/tr[1]/td[3]/a");
-
+    private By deletepage = By.xpath("//tbody/tr[1]/td[3]/div[1][1]/a[3]");
 
     // Hàm xây dựng
     private WebDriver driver;
@@ -58,7 +59,13 @@ public class CustomersPage {
        waitForPageLoaded();
     //    driver.findElement(tdCustomerName).click();
         clickElement(tdCustomerName);
-
+        return new CustomerDetailPage (driver);
+    }
+    public CustomerDetailPage hoverOnFirstRowCustomerName(){
+        waitForPageLoaded();
+        //    driver.findElement(tdCustomerName).click();
+       hoverOnElement(tdCustomerName);
+       //clickElement(deletepage);
         return new CustomerDetailPage (driver);
     }
 

@@ -55,14 +55,15 @@ public class CustomersTest extends BaseTest {
 
         customersPage.searchCustomer("Holiday07");
         //Click vào giá trị Cusstomer Name dòng đầu tiên
-        customerDetailPage = customersPage.clickOnFirstRowCustomerName();
-//        DeleteCustomerPage deleteCustomerPage = new DeleteCustomerPage(driver);
-//        deleteCustomerPage.DeletePage();
-//
-//
-//// create an object of the Actions class
-//         Actions action = new Actions(driver);
-//        action.moveToElement(deleteCustomerPage.getDeletePageElement()).build().perform();
+        customerDetailPage = customersPage.hoverOnFirstRowCustomerName();
+        DeleteCustomerPage deleteCustomerPage = new DeleteCustomerPage(driver);
+        deleteCustomerPage.DeletePage();
+
+        //customersPage.hoverOnFirstRowCustomerName();
+
+// create an object of the Actions class
+         Actions mouseHover = new Actions(driver);
+        mouseHover.moveToElement(deleteCustomerPage.getDeletePageElement()).build().perform();
 
 
 

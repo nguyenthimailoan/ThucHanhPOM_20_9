@@ -29,7 +29,8 @@ public class WebUI {
     public static void hoverOnElement(By by) {
         waitForElementVisible(by);
         Actions action = new Actions(driver);
-        action.moveToElement(getWebElement(by));
+        logConsole(action.toString());
+        action.moveToElement(getWebElement(by)).perform();
         logConsole("Hover on element " + by);
     }
 
